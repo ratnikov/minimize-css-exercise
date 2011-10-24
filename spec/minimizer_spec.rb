@@ -45,6 +45,23 @@ describe Minimizer do
     Minimizer.minimize(content).should == minimized_content
   end
 
+  it "should remove inline comments" do
+    content =
+      '/* reset a few things */
+      body {
+       margin: 0; /* or maybe 10px? */
+       padding: 0; /* or maybe 20px? will think about that tomorrow */
+      }'
+
+    minimized_content =
+      'body {
+       margin: 0; 
+       padding: 0; 
+      }'
+
+    Minimizer.minimize(content).should == minimized_content
+  end
+
   it "should remove blank lines and lines that are only comments" do
     content =
       '
