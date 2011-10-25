@@ -1,7 +1,7 @@
 require 'minimize_css'
 
 describe MinimizeCss do
-  it "should remove all comments and blank lines" do
+  it "should remove all comments and blank lines from a file" do
     minimized_content =
 'body {
  margin: 0;

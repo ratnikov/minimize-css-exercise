@@ -28,7 +28,7 @@ describe Minimizer do
     Minimizer.minimize(content).should == minimized_content
   end
 
-  it "should remove lines that are only comments" do
+  it "should remove lines that consist of comments" do
     content =
       '/* reset a few things */
       body {
@@ -62,7 +62,7 @@ describe Minimizer do
     Minimizer.minimize(content).should == minimized_content
   end
 
-  it "should remove blank lines and lines that are only comments" do
+  it "should remove both blank lines and comments" do
     content =
       '
       /* color of brain-matter */
