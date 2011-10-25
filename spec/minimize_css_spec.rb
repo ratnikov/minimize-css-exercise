@@ -4,8 +4,8 @@ require 'tempfile'
 
 describe MinimizeCss do
   it "should remove all comments and blank lines from a file" do
-    minimized_content =
-'body {
+    minimized_content = <<-MINIMIZED.chomp
+body {
  margin: 0;
  padding: 0;
 }
@@ -16,7 +16,8 @@ describe MinimizeCss do
  width: 990px;
  margin: 0px auto;
  background: #FFF;
-}'
+}
+    MINIMIZED
 
     original_css = fixture_path('style.css')
     minimized_css = Tempfile.new('mini_style.css')
