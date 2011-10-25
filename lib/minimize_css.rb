@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), 'minimizer.rb')
+require 'minimizer'
 
 class MinimizeCss
   def initialize(input)
