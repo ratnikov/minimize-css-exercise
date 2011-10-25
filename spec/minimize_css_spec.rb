@@ -16,8 +16,8 @@ describe MinimizeCss do
  background: #FFF;
 }'
 
-    original_css = File.join(File.dirname(__FILE__), '..', 'files', 'style.css')
-    minimized_css = File.join(File.dirname(__FILE__), '..', 'files', 'mini_style.css')
+    original_css = fixture_path('style.css')
+    minimized_css = fixture_path('mini_style.css')
 
     minimizer = MinimizeCss.new(original_css)
     minimizer.minimize_to(minimized_css)
