@@ -1,4 +1,4 @@
-require 'minimize_css'
+require 'spec_helper'
 
 describe Minimizer do
   it "should remove blank lines" do

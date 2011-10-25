@@ -1,4 +1,4 @@
-require 'minimize_css'
+require 'spec_helper'
 
 describe MinimizeCss do
   it "should remove all comments and blank lines from a file" do
