@@ -1,5 +1,7 @@
 require 'spec_helper'
 
+require 'tempfile'
+
 describe MinimizeCss do
   it "should remove all comments and blank lines from a file" do
     minimized_content =
@@ -17,7 +19,7 @@ describe MinimizeCss do
 }'
 
     original_css = fixture_path('style.css')
-    minimized_css = fixture_path('mini_style.css')
+    minimized_css = Tempfile.new('mini_style.css')
 
     minimizer = MinimizeCss.new(original_css)
     minimizer.minimize_to(minimized_css)
